@@ -11,6 +11,22 @@ function setTheme(theme) {
     }
 }
 
-// 1. Try to change the theme to 'dark'
-// 2. Run the code to see that it works
-setTheme('light');
+// Link the button to the function
+const button = document.getElementById('theme-toggle');
+let currentTheme = 'light'; // Initial theme
+
+button.addEventListener('click', () => {
+    // Toggle the theme
+    if (currentTheme === 'light') {
+        setTheme('dark');
+        currentTheme = 'dark';
+        button.textContent = 'Switch to Light Theme';
+    } else {
+        setTheme('light');
+        currentTheme = 'light';
+        button.textContent = 'Switch to Dark Theme';
+    }
+});
+
+// Set the initial theme
+setTheme(currentTheme);
